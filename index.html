@@ -118,14 +118,7 @@
       color: var(--white);
       text-decoration: none;
     }
-    .nav-logo span { color: #4CAF50; }
-    .logo-icon {
-      width: 40px; height: 40px;
-      background: #4CAF50;
-      border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-    }
+    .nav-logo svg { flex-shrink: 0; }
     .nav-links {
       display: flex;
       gap: 32px;
@@ -614,15 +607,15 @@
     <div class="nav-inner">
       <!-- Logo -->
       <a href="#" class="nav-logo">
-        <div class="logo-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M19 17H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1l2-3h8l2 3h1a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2z"/>
-            <circle cx="7.5" cy="14.5" r="1.5"/>
-            <circle cx="16.5" cy="14.5" r="1.5"/>
-          </svg>
-        </div>
+        <!-- Circular emblem logo matching P&R brand -->
+        <svg width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="22" cy="22" r="21" fill="white" stroke="#222" stroke-width="1.5"/>
+          <circle cx="22" cy="22" r="18" fill="none" stroke="#222" stroke-width="1"/>
+          <text x="22" y="20" text-anchor="middle" font-family="Georgia, serif" font-weight="700" font-size="11" fill="#111" letter-spacing="1">P&amp;R</text>
+          <text x="22" y="30" text-anchor="middle" font-family="Georgia, serif" font-weight="400" font-size="5" fill="#333" letter-spacing="2">AUTO CENTER</text>
+        </svg>
         <div style="display:flex;flex-direction:column;line-height:1.1">
-          <div style="font-size:1rem;font-weight:900;letter-spacing:0.05em">P&amp;<span style="color:#4CAF50">R</span></div>
+          <div style="font-size:1rem;font-weight:900;letter-spacing:0.05em;color:#fff">P&amp;R</div>
           <div style="font-size:0.6rem;font-weight:600;letter-spacing:0.15em;color:#8899aa;text-transform:uppercase">Auto Center</div>
         </div>
       </a>
@@ -783,6 +776,38 @@
         <div class="service-desc">Stuck on the side of the road at 2am? We've got you covered. Our towing service is available around the clock — call anytime.</div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- ===== VEHICLE SPECIALTIES ===== -->
+<section style="background:#06090f;padding:60px 0;border-top:1px solid #1a2535">
+  <div class="container">
+    <div class="fade-in" style="text-align:center;margin-bottom:40px">
+      <p class="section-label">We Work On</p>
+      <h2 style="font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;color:#fff">All Makes &amp; Models</h2>
+    </div>
+    <div class="fade-in" style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:800px;margin:0 auto">
+      <div style="background:#0d1424;border:1px solid #1a2535;border-radius:14px;padding:28px 16px;text-align:center;transition:transform .2s,border-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='#e63946'" onmouseout="this.style.transform='';this.style.borderColor='#1a2535'">
+        <div style="font-size:2rem;margin-bottom:10px">🇯🇵</div>
+        <div style="font-weight:700;color:#fff;font-size:0.95rem">Japanese</div>
+        <div style="font-size:0.75rem;color:#5a7a9a;margin-top:4px">Toyota · Honda · Lexus</div>
+      </div>
+      <div style="background:#0d1424;border:1px solid #1a2535;border-radius:14px;padding:28px 16px;text-align:center;transition:transform .2s,border-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='#e63946'" onmouseout="this.style.transform='';this.style.borderColor='#1a2535'">
+        <div style="font-size:2rem;margin-bottom:10px">🇩🇪</div>
+        <div style="font-weight:700;color:#fff;font-size:0.95rem">European</div>
+        <div style="font-size:0.75rem;color:#5a7a9a;margin-top:4px">BMW · Benz · Audi</div>
+      </div>
+      <div style="background:#0d1424;border:1px solid #1a2535;border-radius:14px;padding:28px 16px;text-align:center;transition:transform .2s,border-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='#e63946'" onmouseout="this.style.transform='';this.style.borderColor='#1a2535'">
+        <div style="font-size:2rem;margin-bottom:10px">🇺🇸</div>
+        <div style="font-weight:700;color:#fff;font-size:0.95rem">American</div>
+        <div style="font-size:0.75rem;color:#5a7a9a;margin-top:4px">Ford · Chevy · Dodge</div>
+      </div>
+      <div style="background:#0d1424;border:1px solid #1a2535;border-radius:14px;padding:28px 16px;text-align:center;transition:transform .2s,border-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='#e63946'" onmouseout="this.style.transform='';this.style.borderColor='#1a2535'">
+        <div style="font-size:2rem;margin-bottom:10px">🏆</div>
+        <div style="font-weight:700;color:#fff;font-size:0.95rem">Classics</div>
+        <div style="font-size:0.75rem;color:#5a7a9a;margin-top:4px">Restoration Specialists</div>
+      </div>
     </div>
   </div>
 </section>
@@ -1118,7 +1143,18 @@
 <footer>
   <div class="container">
     <div class="footer-inner">
-      <div class="footer-logo">P&amp;<span>R</span> Auto Center</div>
+      <div class="footer-logo" style="display:flex;align-items:center;gap:12px">
+        <svg width="40" height="40" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="22" cy="22" r="21" fill="white" stroke="#444" stroke-width="1.5"/>
+          <circle cx="22" cy="22" r="18" fill="none" stroke="#444" stroke-width="1"/>
+          <text x="22" y="20" text-anchor="middle" font-family="Georgia, serif" font-weight="700" font-size="11" fill="#111" letter-spacing="1">P&amp;R</text>
+          <text x="22" y="30" text-anchor="middle" font-family="Georgia, serif" font-weight="400" font-size="5" fill="#333" letter-spacing="2">AUTO CENTER</text>
+        </svg>
+        <div>
+          <div style="font-size:1.1rem;font-weight:900;color:#fff">P&amp;R <span>Auto Center</span></div>
+          <div style="font-size:0.7rem;color:#8899aa;letter-spacing:0.1em;text-transform:uppercase">Glendale, CA</div>
+        </div>
+      </div>
       <div class="footer-tagline">Glendale's Premier Auto Body &amp; Collision Center</div>
 
       <div class="footer-links">
