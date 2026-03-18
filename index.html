@@ -4,145 +4,120 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>P&R Auto Center – Glendale's Premier Auto Body & Collision</title>
-  <meta name="description" content="P&R Auto Center in Glendale, CA. Collision repair, custom paint, frame restoration, PPF/Clear Bra, and 24/7 towing. Free estimates." />
+  <meta name="description" content="P&R Auto Center — Glendale's trusted collision repair, paint & restoration specialists. Free estimates. 24/7 towing. (818) 334-3014." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
   <style>
-    /* ===== RESET & BASE ===== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; font-size: 16px; }
-    body {
-      background: #0a0e1a;
-      color: #e8eaf0;
-      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
 
-    /* ===== VARIABLES ===== */
     :root {
       --red: #e63946;
       --red-dark: #c1121f;
-      --navy: #0a0e1a;
-      --navy-2: #0f1525;
-      --navy-3: #161d30;
-      --navy-card: #131829;
-      --white: #ffffff;
-      --gray: #8892a4;
-      --border: rgba(255,255,255,0.07);
-      --transition: 0.3s ease;
+      --bg-deep: #020408;
+      --bg-dark: #04080f;
+      --bg-card: #0d1424;
+      --bg-card2: #0a1020;
+      --border: #1e2d40;
+      --border-light: #253548;
+      --text-white: #ffffff;
+      --text-light: #b0bec5;
+      --text-muted: #778899;
+      --text-faint: #4a5a6a;
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
-    /* ===== UTILITY ===== */
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-    .section-label {
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--red);
-      margin-bottom: 12px;
-    }
-    .section-title {
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
-      font-weight: 800;
-      line-height: 1.15;
-      color: var(--white);
-      margin-bottom: 16px;
-    }
-    .section-subtitle {
-      font-size: 1.05rem;
-      color: var(--gray);
-      max-width: 560px;
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 14px 28px;
-      border-radius: 6px;
-      font-weight: 700;
-      font-size: 0.95rem;
-      letter-spacing: 0.03em;
-      cursor: pointer;
-      transition: var(--transition);
-      border: none;
-    }
-    .btn-primary {
-      background: var(--red);
-      color: var(--white);
-    }
-    .btn-primary:hover { background: var(--red-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(230,57,70,0.35); }
-    .btn-outline {
-      background: transparent;
-      color: var(--white);
-      border: 2px solid rgba(255,255,255,0.3);
-    }
-    .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.07); transform: translateY(-2px); }
+    html { scroll-behavior: smooth; }
 
-    /* ===== FADE IN ===== */
+    body {
+      font-family: var(--font);
+      background: var(--bg-dark);
+      color: var(--text-white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── SCROLL ANIMATIONS ── */
     .fade-in {
       opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.65s ease, transform 0.65s ease;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
     }
     .fade-in.visible {
       opacity: 1;
       transform: translateY(0);
     }
 
-    /* ===== NAV ===== */
-    #navbar {
+    /* ── NAV ── */
+    nav {
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 1000;
-      background: rgba(10, 14, 26, 0.85);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border);
-      transition: background var(--transition);
-    }
-    .nav-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      padding: 0 40px;
       height: 68px;
+      background: rgba(4, 8, 15, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(30, 45, 64, 0.6);
+      transition: background 0.3s;
     }
-    .nav-logo {
+
+    .logo {
       display: flex;
       align-items: center;
-      gap: 12px;
-      font-size: 1.1rem;
-      font-weight: 900;
-      letter-spacing: 0.02em;
-      color: var(--white);
       text-decoration: none;
+      gap: 0;
     }
-    .nav-logo svg { flex-shrink: 0; }
+    .logo-pr {
+      color: #fff;
+      font-size: 1.3rem;
+      font-weight: 900;
+      letter-spacing: 0.05em;
+      font-family: var(--font);
+    }
+    .logo-divider {
+      width: 1px;
+      height: 24px;
+      background: var(--red);
+      margin: 0 12px;
+      flex-shrink: 0;
+    }
+    .logo-sub {
+      color: #888;
+      font-size: 0.55rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+
     .nav-links {
       display: flex;
+      align-items: center;
       gap: 32px;
       list-style: none;
     }
     .nav-links a {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: rgba(255,255,255,0.7);
+      color: var(--text-light);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 500;
       letter-spacing: 0.04em;
-      transition: color var(--transition);
-      position: relative;
+      transition: color 0.2s;
     }
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -4px; left: 0;
-      width: 0; height: 2px;
+    .nav-links a:hover { color: #fff; }
+
+    .nav-cta {
       background: var(--red);
-      transition: width var(--transition);
+      color: #fff !important;
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-weight: 600 !important;
+      transition: background 0.2s !important;
     }
-    .nav-links a:hover { color: var(--white); }
-    .nav-links a:hover::after { width: 100%; }
-    .nav-cta .btn-primary { padding: 10px 20px; font-size: 0.85rem; }
+    .nav-cta:hover { background: var(--red-dark) !important; color: #fff !important; }
 
     /* Hamburger */
     .hamburger {
@@ -156,982 +131,1167 @@
     }
     .hamburger span {
       display: block;
-      width: 24px; height: 2px;
-      background: var(--white);
+      width: 24px;
+      height: 2px;
+      background: #fff;
       border-radius: 2px;
-      transition: var(--transition);
+      transition: all 0.3s;
     }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
     .mobile-menu {
       display: none;
+      position: fixed;
+      top: 68px; left: 0; right: 0;
+      background: rgba(4, 8, 15, 0.98);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      z-index: 999;
+      padding: 24px 40px;
       flex-direction: column;
-      background: var(--navy-2);
-      border-top: 1px solid var(--border);
-      padding: 16px 24px 24px;
-      gap: 16px;
+      gap: 20px;
     }
     .mobile-menu.open { display: flex; }
     .mobile-menu a {
+      color: var(--text-light);
+      text-decoration: none;
       font-size: 1rem;
-      font-weight: 600;
-      color: rgba(255,255,255,0.8);
+      font-weight: 500;
       padding: 8px 0;
       border-bottom: 1px solid var(--border);
     }
-    .mobile-menu .btn { margin-top: 8px; width: 100%; justify-content: center; }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu a:hover { color: #fff; }
 
-    /* ===== HERO ===== */
+    /* ── HERO ── */
     #hero {
-      position: relative;
       min-height: 100vh;
       display: flex;
       align-items: center;
+      background: var(--bg-dark);
+      position: relative;
       overflow: hidden;
       padding-top: 68px;
     }
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, #0a0e1a 0%, #0f1525 40%, #1a0a0d 100%);
-      z-index: 0;
-    }
-    /* Animated grid lines */
-    .hero-grid {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      overflow: hidden;
-    }
-    .hero-grid::before {
-      content: '';
-      position: absolute;
-      inset: -50%;
-      background-image:
-        linear-gradient(rgba(230,57,70,0.07) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(230,57,70,0.07) 1px, transparent 1px);
-      background-size: 60px 60px;
-      animation: gridMove 20s linear infinite;
-    }
-    @keyframes gridMove {
-      0% { transform: translate(0, 0); }
-      100% { transform: translate(60px, 60px); }
-    }
+
     .hero-glow {
       position: absolute;
-      top: 30%; left: 50%;
+      top: 30%;
+      left: 50%;
       transform: translate(-50%, -50%);
-      width: 700px; height: 400px;
-      background: radial-gradient(ellipse, rgba(230,57,70,0.12) 0%, transparent 70%);
-      z-index: 2;
+      width: 700px;
+      height: 500px;
+      background: radial-gradient(ellipse at center, rgba(230, 57, 70, 0.08) 0%, rgba(230, 57, 70, 0.02) 50%, transparent 70%);
+      pointer-events: none;
     }
-    .hero-content {
+
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
       position: relative;
-      z-index: 3;
-      max-width: 760px;
+      z-index: 1;
     }
-    .hero-badge {
+
+    .hero-eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(230,57,70,0.12);
-      border: 1px solid rgba(230,57,70,0.3);
-      border-radius: 40px;
-      padding: 6px 16px;
-      font-size: 0.8rem;
+      font-size: 0.7rem;
       font-weight: 700;
-      color: var(--red);
-      letter-spacing: 0.08em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      margin-bottom: 28px;
-    }
-    .hero-badge::before {
-      content: '';
-      width: 8px; height: 8px;
-      background: var(--red);
-      border-radius: 50%;
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.5; transform: scale(0.7); }
-    }
-    .hero-title {
-      font-size: clamp(2.6rem, 6.5vw, 5rem);
-      font-weight: 900;
-      line-height: 1.05;
-      letter-spacing: -0.03em;
-      color: var(--white);
+      color: var(--red);
       margin-bottom: 24px;
     }
-    .hero-title .accent { color: var(--red); }
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 1px;
+      background: var(--red);
+    }
+
+    .hero-headline {
+      font-size: clamp(3.5rem, 7vw, 6rem);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 32px;
+    }
+    .hero-headline .line { display: block; }
+    .hero-headline .line-accent {
+      position: relative;
+      display: inline-block;
+    }
+    .hero-headline .line-accent::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--red);
+      border-radius: 2px;
+    }
+
     .hero-sub {
-      font-size: clamp(1rem, 2vw, 1.2rem);
-      color: var(--gray);
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 520px;
       margin-bottom: 40px;
-      max-width: 540px;
+      line-height: 1.7;
     }
-    .hero-sub strong { color: rgba(255,255,255,0.8); }
-    .hero-ctas {
+
+    .hero-buttons {
       display: flex;
-      flex-wrap: wrap;
       gap: 16px;
-      margin-bottom: 56px;
-    }
-    .hero-trust {
-      display: flex;
       flex-wrap: wrap;
-      gap: 24px;
+      margin-bottom: 40px;
     }
-    .trust-item {
+    .btn-primary {
+      background: var(--red);
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+      letter-spacing: 0.01em;
+    }
+    .btn-primary:hover { background: var(--red-dark); transform: translateY(-1px); }
+
+    .btn-ghost {
+      background: transparent;
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid var(--border-light);
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+      letter-spacing: 0.01em;
+    }
+    .btn-ghost:hover { border-color: #fff; background: rgba(255,255,255,0.04); }
+
+    .hero-badges {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .badge {
       display: flex;
       align-items: center;
       gap: 8px;
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.6);
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-weight: 500;
     }
-    .trust-item svg { color: var(--red); }
+    .badge span { font-size: 1rem; }
 
-    /* ===== SECTION PADDING ===== */
-    section { padding: 96px 0; }
+    /* ── SECTIONS COMMON ── */
+    section { padding: 100px 0; }
 
-    /* ===== SERVICES ===== */
-    #services { background: var(--navy-2); }
-    .services-header { text-align: center; margin-bottom: 56px; }
-    .services-header .section-subtitle { margin: 0 auto; text-align: center; }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    .section-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .section-desc {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 520px;
+      line-height: 1.7;
+      margin-bottom: 56px;
+    }
+
+    /* ── SERVICES ── */
+    #services {
+      background: var(--bg-deep);
+    }
+
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
     }
+
     .service-card {
-      background: var(--navy-card);
+      background: var(--bg-card);
       border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 32px;
-      transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+      border-radius: 16px;
+      padding: 32px 28px;
+      transition: border-color 0.25s, transform 0.25s;
       cursor: default;
     }
     .service-card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(230,57,70,0.3);
-      box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+      border-color: var(--red);
+      transform: translateY(-4px);
     }
-    .service-icon {
-      width: 52px; height: 52px;
-      background: rgba(230,57,70,0.1);
-      border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
+
+    .service-icon-wrap {
+      width: 40px;
+      height: 40px;
+      background: var(--red);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       margin-bottom: 20px;
+      flex-shrink: 0;
     }
-    .service-icon svg { width: 26px; height: 26px; color: var(--red); }
-    .service-name {
-      font-size: 1.1rem;
+    .service-icon-wrap svg {
+      width: 20px;
+      height: 20px;
+      fill: none;
+      stroke: #fff;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .service-title {
+      font-size: 1rem;
       font-weight: 700;
-      color: var(--white);
-      margin-bottom: 10px;
+      color: #fff;
+      margin-bottom: 8px;
     }
-    .service-desc { font-size: 0.9rem; color: var(--gray); line-height: 1.7; }
+    .service-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
 
-    /* ===== WHY US ===== */
-    #why-us { background: var(--navy); }
-    .why-header { text-align: center; margin-bottom: 56px; }
-    .why-header .section-subtitle { margin: 0 auto; text-align: center; }
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 24px;
+    /* ── SPECIALTIES ── */
+    #specialties {
+      background: var(--bg-dark);
     }
-    .why-card {
-      background: var(--navy-3);
+
+    .specialties-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .specialty-card {
+      background: var(--bg-card);
       border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 36px 28px;
+      border-radius: 14px;
+      padding: 32px 24px;
       text-align: center;
-      transition: transform var(--transition), border-color var(--transition);
+      transition: border-color 0.25s, transform 0.25s;
+      cursor: default;
     }
-    .why-card:hover { transform: translateY(-4px); border-color: rgba(230,57,70,0.25); }
-    .why-icon {
-      width: 64px; height: 64px;
-      background: rgba(230,57,70,0.1);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 20px;
+    .specialty-card:hover {
+      border-color: var(--red);
+      transform: translateY(-3px);
     }
-    .why-icon svg { width: 30px; height: 30px; color: var(--red); }
-    .why-title { font-size: 1.15rem; font-weight: 800; color: var(--white); margin-bottom: 8px; }
-    .why-desc { font-size: 0.88rem; color: var(--gray); }
 
-    /* ===== GALLERY ===== */
-    #gallery { background: var(--navy-2); }
-    .gallery-header { text-align: center; margin-bottom: 56px; }
-    .gallery-header .section-subtitle { margin: 0 auto; text-align: center; }
-    .gallery-grid {
+    .specialty-icon {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .specialty-icon svg {
+      width: 40px;
+      height: 40px;
+      fill: none;
+      stroke: var(--text-muted);
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: stroke 0.25s;
+    }
+    .specialty-card:hover .specialty-icon svg { stroke: var(--red); }
+
+    .specialty-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .specialty-makes {
+      font-size: 0.75rem;
+      color: var(--text-faint);
+      letter-spacing: 0.03em;
+    }
+
+    /* ── WHY US ── */
+    #why {
+      background: var(--bg-deep);
+    }
+
+    .stats-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(4, 1fr);
       gap: 20px;
     }
+
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 36px 28px;
+      text-align: center;
+      transition: border-color 0.25s;
+    }
+    .stat-card:hover { border-color: var(--border-light); }
+
+    .stat-number {
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: var(--red);
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .stat-label {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .stat-desc {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ── GALLERY ── */
+    #gallery {
+      background: var(--bg-dark);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
     .gallery-card {
       border-radius: 12px;
       overflow: hidden;
       position: relative;
       aspect-ratio: 4/3;
-      cursor: pointer;
+      border: 1px solid var(--border);
     }
+
     .gallery-bg {
+      width: 100%;
+      height: 100%;
       position: absolute;
       inset: 0;
-      transition: transform var(--transition);
     }
-    .gallery-card:hover .gallery-bg { transform: scale(1.05); }
-    .gallery-card:nth-child(1) .gallery-bg { background: linear-gradient(135deg, #1a0a0d 0%, #3d0b14 50%, #6b1520 100%); }
-    .gallery-card:nth-child(2) .gallery-bg { background: linear-gradient(135deg, #0a1a1a 0%, #0b3d3d 50%, #0d6b6b 100%); }
-    .gallery-card:nth-child(3) .gallery-bg { background: linear-gradient(135deg, #0a0e1a 0%, #1a1440 60%, #2a1a6b 100%); }
-    .gallery-card:nth-child(4) .gallery-bg { background: linear-gradient(135deg, #0d1a0a 0%, #1a3d1a 50%, #2a6b2a 100%); }
-    .gallery-card:nth-child(5) .gallery-bg { background: linear-gradient(135deg, #1a140a 0%, #3d2e0b 50%, #6b4f12 100%); }
-    .gallery-card:nth-child(6) .gallery-bg { background: linear-gradient(135deg, #0f1525 0%, #1c2a4a 50%, #2a3f6b 100%); }
+
+    .gallery-bg-1 { background: linear-gradient(135deg, #0a1628 0%, #071020 60%, #040c1a 100%); }
+    .gallery-bg-2 { background: linear-gradient(135deg, #120810 0%, #1a0c14 60%, #200a10 100%); }
+    .gallery-bg-3 { background: linear-gradient(135deg, #06121c 0%, #0c1828 60%, #0a1020 100%); }
+    .gallery-bg-4 { background: linear-gradient(135deg, #0e0c18 0%, #14101c 60%, #18121e 100%); }
+    .gallery-bg-5 { background: linear-gradient(135deg, #101410 0%, #141a14 60%, #0c180c 100%); }
+    .gallery-bg-6 { background: linear-gradient(135deg, #1a0a06 0%, #16100a 60%, #120c0a 100%); }
+
     .gallery-overlay {
       position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 60%);
-      display: flex;
-      align-items: flex-end;
-      padding: 24px;
+      bottom: 0; left: 0; right: 0;
+      padding: 20px 18px 16px;
+      background: linear-gradient(transparent, rgba(2, 4, 8, 0.92));
     }
-    .gallery-label {
-      font-size: 1rem;
+
+    .gallery-tag {
+      display: inline-block;
+      font-size: 0.62rem;
       font-weight: 700;
-      color: var(--white);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--red);
+      background: rgba(230, 57, 70, 0.12);
+      border: 1px solid rgba(230, 57, 70, 0.25);
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 6px;
     }
-    /* Decorative shapes in gallery cards */
-    .gallery-shape {
+
+    .gallery-label {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .gallery-soon {
       position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0.15;
-    }
-    .gallery-shape svg { width: 80px; height: 80px; color: white; }
-
-    /* ===== TESTIMONIALS ===== */
-    #testimonials { background: var(--navy); }
-    .test-header { text-align: center; margin-bottom: 56px; }
-    .test-header .section-subtitle { margin: 0 auto; text-align: center; }
-    .test-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 24px;
-    }
-    .test-card {
-      background: var(--navy-card);
+      top: 14px;
+      right: 14px;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      background: rgba(13, 20, 36, 0.85);
       border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 32px;
+      padding: 4px 10px;
+      border-radius: 20px;
     }
-    .test-stars {
-      display: flex;
-      gap: 4px;
-      margin-bottom: 16px;
-    }
-    .test-stars svg { width: 18px; height: 18px; color: #f4a261; fill: #f4a261; }
-    .test-quote {
-      font-size: 0.95rem;
-      color: rgba(255,255,255,0.8);
-      line-height: 1.75;
-      margin-bottom: 20px;
-      font-style: italic;
-    }
-    .test-author { display: flex; align-items: center; gap: 12px; }
-    .test-avatar {
-      width: 44px; height: 44px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--red) 0%, #6b1520 100%);
-      display: flex; align-items: center; justify-content: center;
-      font-weight: 800;
-      font-size: 1rem;
-      color: var(--white);
-      flex-shrink: 0;
-    }
-    .test-name { font-weight: 700; font-size: 0.9rem; color: var(--white); }
-    .test-meta { font-size: 0.78rem; color: var(--gray); }
 
-    /* ===== CONTACT ===== */
-    #contact { background: var(--navy-2); }
+    /* ── TESTIMONIALS ── */
+    #testimonials {
+      background: var(--bg-deep);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .testimonial-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 36px 32px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .testimonial-quote-bg {
+      position: absolute;
+      top: 12px;
+      right: 20px;
+      font-size: 7rem;
+      font-weight: 900;
+      color: rgba(230, 57, 70, 0.07);
+      line-height: 1;
+      font-family: Georgia, serif;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .testimonial-stars {
+      display: flex;
+      gap: 3px;
+      margin-bottom: 20px;
+    }
+    .testimonial-stars svg {
+      width: 16px;
+      height: 16px;
+      fill: var(--red);
+    }
+
+    .testimonial-text {
+      font-size: 0.92rem;
+      font-style: italic;
+      color: #e0e8f0;
+      line-height: 1.75;
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .testimonial-author {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .testimonial-location {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    /* ── CONTACT ── */
+    #contact {
+      background: var(--bg-dark);
+    }
+
     .contact-grid {
       display: grid;
-      grid-template-columns: 1fr 1.4fr;
-      gap: 64px;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
       align-items: start;
     }
-    .contact-info h3 { font-size: 1.4rem; font-weight: 800; color: var(--white); margin-bottom: 28px; }
-    .contact-detail {
+
+    .contact-info h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 32px;
+    }
+
+    .contact-item {
       display: flex;
       align-items: flex-start;
       gap: 14px;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
-    .contact-detail-icon {
-      width: 40px; height: 40px;
-      background: rgba(230,57,70,0.1);
+    .contact-item-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
       border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       flex-shrink: 0;
     }
-    .contact-detail-icon svg { width: 18px; height: 18px; color: var(--red); }
-    .contact-detail-text p { font-size: 0.85rem; color: var(--gray); margin-bottom: 2px; }
-    .contact-detail-text a,
-    .contact-detail-text span { font-size: 0.95rem; color: var(--white); font-weight: 600; }
-    .contact-detail-text a:hover { color: var(--red); }
-    .hours-table { margin-top: 32px; }
-    .hours-table h4 { font-size: 0.95rem; font-weight: 700; color: var(--white); margin-bottom: 14px; }
-    .hours-row {
-      display: flex;
-      justify-content: space-between;
-      padding: 9px 0;
-      border-bottom: 1px solid var(--border);
-      font-size: 0.9rem;
+    .contact-item-icon svg {
+      width: 16px;
+      height: 16px;
+      fill: none;
+      stroke: var(--red);
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
-    .hours-row .day { color: var(--gray); }
-    .hours-row .time { color: var(--white); font-weight: 600; }
-    .hours-row.closed .time { color: var(--red); }
+    .contact-item-text {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .contact-item-text a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .contact-item-text a:hover { color: var(--red); }
 
-    /* Form */
-    .contact-form h3 { font-size: 1.4rem; font-weight: 800; color: var(--white); margin-bottom: 28px; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .form-group { margin-bottom: 16px; }
+    .hours-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 28px;
+    }
+    .hours-table td {
+      padding: 8px 0;
+      font-size: 0.83rem;
+      border-bottom: 1px solid rgba(30, 45, 64, 0.5);
+    }
+    .hours-table td:first-child { color: var(--text-muted); }
+    .hours-table td:last-child { color: #fff; font-weight: 500; text-align: right; }
+    .hours-table tr:last-child td { border-bottom: none; }
+
+    .contact-form {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px;
+    }
+    .contact-form h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 28px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
     .form-group label {
       display: block;
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: var(--gray);
+      font-size: 0.72rem;
+      font-weight: 600;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      margin-bottom: 8px;
+      color: var(--text-muted);
+      margin-bottom: 7px;
     }
     .form-group input,
     .form-group textarea,
     .form-group select {
       width: 100%;
-      background: var(--navy-card);
+      background: var(--bg-card2);
       border: 1px solid var(--border);
       border-radius: 8px;
-      padding: 13px 16px;
-      font-size: 0.95rem;
-      color: var(--white);
-      font-family: inherit;
-      transition: border-color var(--transition);
+      padding: 11px 14px;
+      font-size: 0.88rem;
+      color: #fff;
+      font-family: var(--font);
       outline: none;
+      transition: border-color 0.2s;
     }
     .form-group input:focus,
     .form-group textarea:focus,
     .form-group select:focus { border-color: var(--red); }
     .form-group input::placeholder,
-    .form-group textarea::placeholder { color: rgba(255,255,255,0.25); }
-    .form-group textarea { resize: vertical; min-height: 110px; }
-    .form-group select { appearance: none; cursor: pointer; }
-    .form-group select option { background: var(--navy-card); }
-    .form-submit { margin-top: 8px; }
-    .form-submit .btn { width: 100%; justify-content: center; padding: 15px; font-size: 1rem; }
+    .form-group textarea::placeholder { color: var(--text-faint); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
 
-    /* ===== FOOTER ===== */
+    .form-submit {
+      width: 100%;
+      background: var(--red);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 14px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      font-family: var(--font);
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 8px;
+      letter-spacing: 0.02em;
+    }
+    .form-submit:hover { background: var(--red-dark); }
+
+    /* ── FOOTER ── */
     footer {
-      background: #060810;
+      background: var(--bg-deep);
       border-top: 1px solid var(--border);
-      padding: 48px 0 32px;
+      padding: 60px 0 0;
     }
-    .footer-inner {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 20px;
+
+    .footer-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 48px;
     }
-    .footer-logo {
-      font-size: 1.3rem;
-      font-weight: 900;
-      color: var(--white);
-      letter-spacing: -0.02em;
+
+    .footer-brand .logo { margin-bottom: 16px; }
+    .footer-tagline {
+      font-size: 0.8rem;
+      color: var(--text-faint);
+      line-height: 1.6;
+      max-width: 240px;
     }
-    .footer-logo span { color: #4CAF50; }
-    .footer-tagline { font-size: 0.88rem; color: var(--gray); }
-    .footer-links {
-      display: flex;
-      gap: 24px;
-      flex-wrap: wrap;
-      justify-content: center;
+
+    .footer-col h4 {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 20px;
     }
-    .footer-links a {
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 12px; }
+    .footer-col ul li a {
       font-size: 0.85rem;
-      color: var(--gray);
-      transition: color var(--transition);
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
     }
-    .footer-links a:hover { color: var(--white); }
-    .footer-instagram {
+    .footer-col ul li a:hover { color: #fff; }
+
+    .social-link {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid var(--border);
-      border-radius: 40px;
-      padding: 8px 20px;
+      gap: 10px;
       font-size: 0.85rem;
-      color: rgba(255,255,255,0.7);
-      transition: var(--transition);
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 10px 16px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      transition: border-color 0.2s, color 0.2s;
+      margin-bottom: 8px;
     }
-    .footer-instagram:hover { background: rgba(230,57,70,0.1); border-color: rgba(230,57,70,0.3); color: var(--white); }
-    .footer-instagram svg { width: 16px; height: 16px; }
-    .footer-copy { font-size: 0.8rem; color: rgba(255,255,255,0.3); }
-    .footer-sister { font-size: 0.8rem; color: var(--gray); }
-    .footer-sister a { color: var(--red); }
-    .footer-divider { width: 1px; height: 16px; background: var(--border); }
+    .social-link svg {
+      width: 18px;
+      height: 18px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .social-link:hover { border-color: var(--red); color: #fff; }
 
-    /* ===== MOBILE ===== */
-    @media (max-width: 768px) {
-      section { padding: 72px 0; }
-      .nav-links, .nav-cta { display: none; }
-      .hamburger { display: flex; }
-      .hero-title { letter-spacing: -0.02em; }
-      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-      .form-row { grid-template-columns: 1fr; }
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 24px 40px;
+      margin-top: 48px;
+      border-top: 1px solid rgba(30, 45, 64, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
     }
-    @media (max-width: 480px) {
-      .hero-ctas { flex-direction: column; }
-      .hero-ctas .btn { width: 100%; justify-content: center; }
+    .footer-bottom p {
+      font-size: 0.75rem;
+      color: var(--text-faint);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 0 24px; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+
+      .hero-inner { padding: 0 24px; }
+      .hero-headline { font-size: clamp(2.6rem, 10vw, 4rem); }
+      .hero-sub { font-size: 0.95rem; }
+
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .specialties-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .container { padding: 0 24px; }
+      section { padding: 72px 0; }
+
+      .footer-grid { padding: 0 24px; }
+      .footer-bottom { padding: 24px; }
+    }
+
+    @media (max-width: 560px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .specialties-grid { grid-template-columns: 1fr 1fr; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .hero-buttons { flex-direction: column; }
+      .btn-primary, .btn-ghost { text-align: center; }
+      .form-row { grid-template-columns: 1fr; }
+      .contact-form { padding: 28px 20px; }
+      .mobile-menu { padding: 24px; }
     }
   </style>
 </head>
 <body>
 
-<!-- ===== NAV ===== -->
-<nav id="navbar">
-  <div class="container">
-    <div class="nav-inner">
-      <!-- Logo -->
-      <a href="#" class="nav-logo">
-        <!-- Circular emblem logo matching P&R brand -->
-        <svg width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="22" cy="22" r="21" fill="white" stroke="#222" stroke-width="1.5"/>
-          <circle cx="22" cy="22" r="18" fill="none" stroke="#222" stroke-width="1"/>
-          <text x="22" y="20" text-anchor="middle" font-family="Georgia, serif" font-weight="700" font-size="11" fill="#111" letter-spacing="1">P&amp;R</text>
-          <text x="22" y="30" text-anchor="middle" font-family="Georgia, serif" font-weight="400" font-size="5" fill="#333" letter-spacing="2">AUTO CENTER</text>
-        </svg>
-        <div style="display:flex;flex-direction:column;line-height:1.1">
-          <div style="font-size:1rem;font-weight:900;letter-spacing:0.05em;color:#fff">P&amp;R</div>
-          <div style="font-size:0.6rem;font-weight:600;letter-spacing:0.15em;color:#8899aa;text-transform:uppercase">Auto Center</div>
-        </div>
-      </a>
-
-      <!-- Nav Links -->
-      <ul class="nav-links">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#why-us">Why Us</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-
-      <!-- CTA -->
-      <div class="nav-cta">
-        <a href="#contact" class="btn btn-primary">Get Estimate</a>
-      </div>
-
-      <!-- Hamburger -->
-      <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-  <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="#services" class="mobile-link">Services</a>
-    <a href="#why-us" class="mobile-link">Why Us</a>
-    <a href="#gallery" class="mobile-link">Gallery</a>
-    <a href="#contact" class="mobile-link">Contact</a>
-    <a href="#contact" class="btn btn-primary">Get a Free Estimate</a>
-  </div>
+<!-- ── NAV ── -->
+<nav>
+  <a href="#hero" class="logo">
+    <span class="logo-pr">P&amp;R</span>
+    <div class="logo-divider"></div>
+    <span class="logo-sub">AUTO CENTER</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#specialties">Vehicles</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#contact" class="nav-cta">Free Estimate</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
-<!-- ===== HERO ===== -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services" onclick="closeMobile()">Services</a>
+  <a href="#specialties" onclick="closeMobile()">Vehicles</a>
+  <a href="#gallery" onclick="closeMobile()">Gallery</a>
+  <a href="#testimonials" onclick="closeMobile()">Reviews</a>
+  <a href="#contact" onclick="closeMobile()">Free Estimate</a>
+</div>
+
+<!-- ── HERO ── -->
 <section id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-grid"></div>
   <div class="hero-glow"></div>
-  <div class="container">
-    <div class="hero-content">
-      <div class="hero-badge">Glendale, CA · Est. P&R Auto Center</div>
-      <h1 class="hero-title">
-        Precision Repairs.<br>
-        <span class="accent">Flawless Finish.</span>
-      </h1>
-      <p class="hero-sub">
-        <strong>Free estimates</strong> on every job. <strong>24/7 towing</strong> when you need it most.
-        From collision repair to full custom restorations — we take pride in every panel.
-      </p>
-      <div class="hero-ctas">
-        <a href="#contact" class="btn btn-primary">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-          Get a Free Estimate
-        </a>
-        <a href="tel:+18183343014" class="btn btn-outline">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.42 2 2 0 0 1 3.58 1.25h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          Call (818) 334-3014
-        </a>
-      </div>
-      <div class="hero-trust">
-        <div class="trust-item">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          Free Estimates
-        </div>
-        <div class="trust-item">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          24/7 Towing Available
-        </div>
-        <div class="trust-item">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          All Makes &amp; Models
-        </div>
-        <div class="trust-item">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          Glendale, CA
-        </div>
-      </div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Glendale, CA · Est. 2005</div>
+    <h1 class="hero-headline fade-in">
+      <span class="line">Precision Repairs.</span>
+      <span class="line"><span class="line-accent">Flawless Finish.</span></span>
+    </h1>
+    <p class="hero-sub fade-in">
+      Glendale's trusted collision, paint &amp; restoration specialists.<br />
+      Free estimates. 24/7 towing.
+    </p>
+    <div class="hero-buttons fade-in">
+      <a href="#contact" class="btn-primary">Get a Free Estimate</a>
+      <a href="tel:8183343014" class="btn-ghost">Call (818) 334-3014</a>
+    </div>
+    <div class="hero-badges fade-in">
+      <div class="badge"><span>⭐</span> 5.0 Rating</div>
+      <div class="badge"><span>🔧</span> Free Estimates</div>
+      <div class="badge"><span>🚗</span> 24/7 Towing</div>
     </div>
   </div>
 </section>
 
-<!-- ===== SERVICES ===== -->
+<!-- ── SERVICES ── -->
 <section id="services">
   <div class="container">
-    <div class="services-header fade-in">
-      <p class="section-label">What We Do</p>
-      <h2 class="section-title">Full-Service Auto Body &amp; Beyond</h2>
-      <p class="section-subtitle">From minor fender benders to full frame restorations — we handle it all with the precision of craftsmen, not just mechanics.</p>
-    </div>
+    <div class="section-label fade-in">What We Do</div>
+    <h2 class="section-title fade-in">Expert Auto Body Services</h2>
+    <p class="section-desc fade-in">From minor dents to full frame repairs, we restore your vehicle to factory condition — or better.</p>
     <div class="services-grid">
 
       <div class="service-card fade-in">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-5 0v-15A2.5 2.5 0 0 1 9.5 2z"/>
-            <path d="M14.5 8A2.5 2.5 0 0 1 17 10.5v9a2.5 2.5 0 0 1-5 0v-9A2.5 2.5 0 0 1 14.5 8z"/>
-          </svg>
+        <div class="service-icon-wrap">
+          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
         </div>
-        <div class="service-name">Collision Repair</div>
-        <div class="service-desc">Expert dent removal, panel repair, and structural restoration after accidents. We bring your vehicle back to pre-collision condition — or better.</div>
+        <div class="service-title">Collision Repair</div>
+        <div class="service-desc">Full structural and cosmetic restoration after accidents. Insurance-approved, OEM-quality repairs on all vehicle types.</div>
       </div>
 
       <div class="service-card fade-in">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"/>
-            <path d="M8 12s1.5 2 4 2 4-2 4-2"/>
-            <line x1="9" y1="9" x2="9.01" y2="9"/>
-            <line x1="15" y1="9" x2="15.01" y2="9"/>
-          </svg>
+        <div class="service-icon-wrap">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
         </div>
-        <div class="service-name">Paint &amp; Refinishing</div>
-        <div class="service-desc">From spot repairs to full resprays, our painters match factory finishes perfectly. We use premium materials for a deep, lasting gloss.</div>
+        <div class="service-title">Paint &amp; Refinishing</div>
+        <div class="service-desc">Color-matched factory finishes, spot repairs, and full respray. We use premium waterborne paints for a flawless result.</div>
       </div>
 
       <div class="service-card fade-in">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-            <line x1="8" y1="21" x2="16" y2="21"/>
-            <line x1="12" y1="17" x2="12" y2="21"/>
-          </svg>
+        <div class="service-icon-wrap">
+          <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
         </div>
-        <div class="service-name">Frame &amp; Structural</div>
-        <div class="service-desc">Advanced frame straightening and unibody repair using precision measurement systems. We restore structural integrity — your safety depends on it.</div>
+        <div class="service-title">Frame &amp; Structural</div>
+        <div class="service-desc">Computer-aided frame straightening and structural repair to restore your vehicle's geometry and safety ratings.</div>
       </div>
 
       <div class="service-card fade-in">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-          </svg>
+        <div class="service-icon-wrap">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         </div>
-        <div class="service-name">Custom &amp; Restoration</div>
-        <div class="service-desc">Bring your dream build or classic car back to life. Custom paint schemes, body mods, and full restorations — we live for this work.</div>
+        <div class="service-title">Custom &amp; Restoration</div>
+        <div class="service-desc">Full classic car restorations, custom paint jobs, and specialty finishes. We bring your vision — and your vintage — back to life.</div>
       </div>
 
       <div class="service-card fade-in">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-          </svg>
+        <div class="service-icon-wrap">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
-        <div class="service-name">Clear Bra / PPF</div>
-        <div class="service-desc">Paint Protection Film installation that shields your finish from chips, scratches, and road debris — invisible, durable, and worth every penny.</div>
+        <div class="service-title">Clear Bra / PPF</div>
+        <div class="service-desc">Paint protection film installation to shield your paint from rock chips, scratches, and road debris. Invisible and durable.</div>
       </div>
 
       <div class="service-card fade-in">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M1 3h15v13H1z"/>
-            <path d="M16 8h4l3 3v5h-7V8z"/>
-            <circle cx="5.5" cy="18.5" r="2.5"/>
-            <circle cx="18.5" cy="18.5" r="2.5"/>
-          </svg>
+        <div class="service-icon-wrap">
+          <svg viewBox="0 0 24 24"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
         </div>
-        <div class="service-name">24/7 Towing</div>
-        <div class="service-desc">Stuck on the side of the road at 2am? We've got you covered. Our towing service is available around the clock — call anytime.</div>
+        <div class="service-title">24/7 Towing</div>
+        <div class="service-desc">Stranded any time, day or night? We've got you covered with fast, reliable towing service directly to our facility.</div>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- ===== VEHICLE SPECIALTIES ===== -->
-<section style="background:#06090f;padding:60px 0;border-top:1px solid #1a2535">
+<!-- ── SPECIALTIES ── -->
+<section id="specialties">
   <div class="container">
-    <div class="fade-in" style="text-align:center;margin-bottom:40px">
-      <p class="section-label">We Work On</p>
-      <h2 style="font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;color:#fff">All Makes &amp; Models</h2>
-    </div>
-    <div class="fade-in" style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:800px;margin:0 auto">
-      <div style="background:#0d1424;border:1px solid #1a2535;border-radius:14px;padding:28px 16px;text-align:center;transition:transform .2s,border-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='#e63946'" onmouseout="this.style.transform='';this.style.borderColor='#1a2535'">
-        <div style="font-size:2rem;margin-bottom:10px">🇯🇵</div>
-        <div style="font-weight:700;color:#fff;font-size:0.95rem">Japanese</div>
-        <div style="font-size:0.75rem;color:#5a7a9a;margin-top:4px">Toyota · Honda · Lexus</div>
+    <div class="section-label fade-in">Vehicles We Serve</div>
+    <h2 class="section-title fade-in">All Makes &amp; Models</h2>
+    <p class="section-desc fade-in">Our technicians are trained on every major vehicle brand — import, domestic, and collector classics.</p>
+    <div class="specialties-grid">
+
+      <div class="specialty-card fade-in">
+        <div class="specialty-icon">
+          <svg viewBox="0 0 48 48">
+            <circle cx="24" cy="24" r="18" stroke-width="1.5"/>
+            <path d="M14 24c0-5.5 4.5-10 10-10s10 4.5 10 10" stroke-width="1.5"/>
+            <path d="M10 28h28" stroke-width="1.5"/>
+            <circle cx="14" cy="32" r="3" stroke-width="1.5"/>
+            <circle cx="34" cy="32" r="3" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="specialty-name">Japanese</div>
+        <div class="specialty-makes">Toyota · Honda · Lexus</div>
       </div>
-      <div style="background:#0d1424;border:1px solid #1a2535;border-radius:14px;padding:28px 16px;text-align:center;transition:transform .2s,border-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='#e63946'" onmouseout="this.style.transform='';this.style.borderColor='#1a2535'">
-        <div style="font-size:2rem;margin-bottom:10px">🇩🇪</div>
-        <div style="font-weight:700;color:#fff;font-size:0.95rem">European</div>
-        <div style="font-size:0.75rem;color:#5a7a9a;margin-top:4px">BMW · Benz · Audi</div>
+
+      <div class="specialty-card fade-in">
+        <div class="specialty-icon">
+          <svg viewBox="0 0 48 48">
+            <path d="M8 30l5-14h22l5 14H8z" stroke-width="1.5"/>
+            <path d="M13 30v4" stroke-width="1.5"/>
+            <path d="M35 30v4" stroke-width="1.5"/>
+            <rect x="12" y="22" width="24" height="6" rx="1" stroke-width="1.5"/>
+            <circle cx="16" cy="36" r="3" stroke-width="1.5"/>
+            <circle cx="32" cy="36" r="3" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="specialty-name">European</div>
+        <div class="specialty-makes">BMW · Mercedes · Porsche</div>
       </div>
-      <div style="background:#0d1424;border:1px solid #1a2535;border-radius:14px;padding:28px 16px;text-align:center;transition:transform .2s,border-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='#e63946'" onmouseout="this.style.transform='';this.style.borderColor='#1a2535'">
-        <div style="font-size:2rem;margin-bottom:10px">🇺🇸</div>
-        <div style="font-weight:700;color:#fff;font-size:0.95rem">American</div>
-        <div style="font-size:0.75rem;color:#5a7a9a;margin-top:4px">Ford · Chevy · Dodge</div>
+
+      <div class="specialty-card fade-in">
+        <div class="specialty-icon">
+          <svg viewBox="0 0 48 48">
+            <path d="M6 32l4-12h28l4 12H6z" stroke-width="1.5"/>
+            <path d="M10 26h28" stroke-width="1.5"/>
+            <path d="M14 20v-4h20v4" stroke-width="1.5"/>
+            <circle cx="14" cy="35" r="3.5" stroke-width="1.5"/>
+            <circle cx="34" cy="35" r="3.5" stroke-width="1.5"/>
+            <path d="M6 32h36" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="specialty-name">American</div>
+        <div class="specialty-makes">Ford · Chevy · Dodge</div>
       </div>
-      <div style="background:#0d1424;border:1px solid #1a2535;border-radius:14px;padding:28px 16px;text-align:center;transition:transform .2s,border-color .2s" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='#e63946'" onmouseout="this.style.transform='';this.style.borderColor='#1a2535'">
-        <div style="font-size:2rem;margin-bottom:10px">🏆</div>
-        <div style="font-weight:700;color:#fff;font-size:0.95rem">Classics</div>
-        <div style="font-size:0.75rem;color:#5a7a9a;margin-top:4px">Restoration Specialists</div>
+
+      <div class="specialty-card fade-in">
+        <div class="specialty-icon">
+          <svg viewBox="0 0 48 48">
+            <path d="M7 33l3-10h28l3 10H7z" stroke-width="1.5"/>
+            <path d="M12 23l3-8h18l3 8" stroke-width="1.5"/>
+            <path d="M7 33h34" stroke-width="1.5"/>
+            <circle cx="14" cy="36" r="3" stroke-width="1.5"/>
+            <circle cx="34" cy="36" r="3" stroke-width="1.5"/>
+            <path d="M20 23v-8" stroke-width="1.5"/>
+            <path d="M28 23v-8" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="specialty-name">Classics</div>
+        <div class="specialty-makes">Full Restoration</div>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- ===== WHY US ===== -->
-<section id="why-us">
+<!-- ── WHY US ── -->
+<section id="why">
   <div class="container">
-    <div class="why-header fade-in">
-      <p class="section-label">Why P&amp;R</p>
-      <h2 class="section-title">Glendale's Trusted Auto Body Shop</h2>
-      <p class="section-subtitle">We're not a high-volume insurance mill. We're craftsmen who treat every car like it's our own.</p>
-    </div>
-    <div class="why-grid">
-
-      <div class="why-card fade-in">
-        <div class="why-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="12" y1="1" x2="12" y2="23"/>
-            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-          </svg>
-        </div>
-        <div class="why-title">Free Estimates</div>
-        <div class="why-desc">No charge, no pressure. Get a detailed quote on any repair — collision, custom, or restoration.</div>
+    <div class="section-label fade-in">Why Choose Us</div>
+    <h2 class="section-title fade-in">Built on Results</h2>
+    <p class="section-desc fade-in">We don't just fix cars — we earn trust. Every vehicle leaves our shop better than it came in.</p>
+    <div class="stats-grid">
+      <div class="stat-card fade-in">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Customer Satisfaction</div>
+        <div class="stat-desc">Every job is done right, or we make it right. No exceptions.</div>
       </div>
-
-      <div class="why-card fade-in">
-        <div class="why-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"/>
-            <polyline points="12 6 12 12 16 14"/>
-          </svg>
-        </div>
-        <div class="why-title">24/7 Towing</div>
-        <div class="why-desc">Accidents don't keep business hours. Our tow service is available day and night, every day of the year.</div>
+      <div class="stat-card fade-in">
+        <div class="stat-number">24/7</div>
+        <div class="stat-label">Always Available</div>
+        <div class="stat-desc">Round-the-clock towing and emergency services, 365 days a year.</div>
       </div>
-
-      <div class="why-card fade-in">
-        <div class="why-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M19 17H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1l2-3h8l2 3h1a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2z"/>
-            <circle cx="7.5" cy="14.5" r="1.5"/>
-            <circle cx="16.5" cy="14.5" r="1.5"/>
-          </svg>
-        </div>
-        <div class="why-title">All Makes &amp; Models</div>
-        <div class="why-desc">Domestic, import, luxury, classic. If it has four wheels, we work on it — and we work on it right.</div>
+      <div class="stat-card fade-in">
+        <div class="stat-number">Free</div>
+        <div class="stat-label">Estimates</div>
+        <div class="stat-desc">No surprises. Get a detailed, no-obligation estimate before work begins.</div>
       </div>
-
-      <div class="why-card fade-in">
-        <div class="why-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-          </svg>
-        </div>
-        <div class="why-title">Expert Technicians</div>
-        <div class="why-desc">Our team brings years of hands-on experience. Not just technicians — artists who care about quality as much as you do.</div>
+      <div class="stat-card fade-in">
+        <div class="stat-number">All</div>
+        <div class="stat-label">Makes &amp; Models</div>
+        <div class="stat-desc">From daily drivers to rare classics — we service every vehicle with equal care.</div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- ===== GALLERY ===== -->
+<!-- ── GALLERY ── -->
 <section id="gallery">
   <div class="container">
-    <div class="gallery-header fade-in">
-      <p class="section-label">Our Work</p>
-      <h2 class="section-title">Results We're Proud Of</h2>
-      <p class="section-subtitle">Every car that leaves our shop is a reflection of our standards. Here's a sample of what we do.</p>
-    </div>
+    <div class="section-label fade-in">Our Work</div>
+    <h2 class="section-title fade-in">Before &amp; After</h2>
+    <p class="section-desc fade-in">Real results from real customers. Photos coming soon — the transformations speak for themselves.</p>
     <div class="gallery-grid">
 
       <div class="gallery-card fade-in">
-        <div class="gallery-bg"></div>
-        <div class="gallery-shape">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 17H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1l2-3h8l2 3h1a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2z"/></svg>
+        <div class="gallery-bg gallery-bg-1"></div>
+        <div class="gallery-soon">Photos Coming Soon</div>
+        <div class="gallery-overlay">
+          <div class="gallery-tag">Before &amp; After</div>
+          <div class="gallery-label">Collision Repair</div>
         </div>
-        <div class="gallery-overlay"><div class="gallery-label">Collision Repair</div></div>
       </div>
 
       <div class="gallery-card fade-in">
-        <div class="gallery-bg"></div>
-        <div class="gallery-shape">
-          <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M8 12s1.5 2 4 2 4-2 4-2" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2"/></svg>
+        <div class="gallery-bg gallery-bg-2"></div>
+        <div class="gallery-soon">Photos Coming Soon</div>
+        <div class="gallery-overlay">
+          <div class="gallery-tag">Before &amp; After</div>
+          <div class="gallery-label">Custom Paint</div>
         </div>
-        <div class="gallery-overlay"><div class="gallery-label">Custom Paint Job</div></div>
       </div>
 
       <div class="gallery-card fade-in">
-        <div class="gallery-bg"></div>
-        <div class="gallery-shape">
-          <svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="3" width="20" height="14" rx="2"/></svg>
+        <div class="gallery-bg gallery-bg-3"></div>
+        <div class="gallery-soon">Photos Coming Soon</div>
+        <div class="gallery-overlay">
+          <div class="gallery-tag">Before &amp; After</div>
+          <div class="gallery-label">Frame Restoration</div>
         </div>
-        <div class="gallery-overlay"><div class="gallery-label">Frame Restoration</div></div>
       </div>
 
       <div class="gallery-card fade-in">
-        <div class="gallery-bg"></div>
-        <div class="gallery-shape">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <div class="gallery-bg gallery-bg-4"></div>
+        <div class="gallery-soon">Photos Coming Soon</div>
+        <div class="gallery-overlay">
+          <div class="gallery-tag">Before &amp; After</div>
+          <div class="gallery-label">PPF Install</div>
         </div>
-        <div class="gallery-overlay"><div class="gallery-label">PPF Install</div></div>
       </div>
 
       <div class="gallery-card fade-in">
-        <div class="gallery-bg"></div>
-        <div class="gallery-shape">
-          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <div class="gallery-bg gallery-bg-5"></div>
+        <div class="gallery-soon">Photos Coming Soon</div>
+        <div class="gallery-overlay">
+          <div class="gallery-tag">Before &amp; After</div>
+          <div class="gallery-label">Classic Restore</div>
         </div>
-        <div class="gallery-overlay"><div class="gallery-label">Classic Car Restore</div></div>
       </div>
 
       <div class="gallery-card fade-in">
-        <div class="gallery-bg"></div>
-        <div class="gallery-shape">
-          <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+        <div class="gallery-bg gallery-bg-6"></div>
+        <div class="gallery-soon">Photos Coming Soon</div>
+        <div class="gallery-overlay">
+          <div class="gallery-tag">Before &amp; After</div>
+          <div class="gallery-label">Pearl Repaint</div>
         </div>
-        <div class="gallery-overlay"><div class="gallery-label">Pearl White Repaint</div></div>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- ===== TESTIMONIALS ===== -->
+<!-- ── TESTIMONIALS ── -->
 <section id="testimonials">
   <div class="container">
-    <div class="test-header fade-in">
-      <p class="section-label">Customer Stories</p>
-      <h2 class="section-title">Don't Take Our Word For It</h2>
-      <p class="section-subtitle">Real reviews from real Glendale customers.</p>
-    </div>
-    <div class="test-grid">
+    <div class="section-label fade-in">What Customers Say</div>
+    <h2 class="section-title fade-in">5-Star Reviews</h2>
+    <p class="section-desc fade-in">Don't take our word for it — here's what our customers across Glendale and the LA area have to say.</p>
+    <div class="testimonials-grid">
 
-      <div class="test-card fade-in">
-        <div class="test-stars">
+      <div class="testimonial-card fade-in">
+        <div class="testimonial-quote-bg">"</div>
+        <div class="testimonial-stars">
           <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         </div>
-        <p class="test-quote">"Brought my '67 Mustang in for a full restoration and I couldn't be more impressed. These guys aren't just doing bodywork — they're artists. They matched the original Candy Apple Red perfectly. Worth every penny."</p>
-        <div class="test-author">
-          <div class="test-avatar">M</div>
-          <div>
-            <div class="test-name">Marcus T.</div>
-            <div class="test-meta">Classic Mustang Restoration · Glendale, CA</div>
-          </div>
-        </div>
+        <p class="testimonial-text">"P&R did an incredible job on my 4Runner after a rear-end collision. The paint match was perfect — you can't even tell it was ever hit. Honest pricing, fast turnaround, and they handled my insurance directly."</p>
+        <div class="testimonial-author">Maria T.</div>
+        <div class="testimonial-location">Glendale, CA</div>
       </div>
 
-      <div class="test-card fade-in">
-        <div class="test-stars">
+      <div class="testimonial-card fade-in">
+        <div class="testimonial-quote-bg">"</div>
+        <div class="testimonial-stars">
           <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         </div>
-        <p class="test-quote">"Got rear-ended on the 5 and called P&R at midnight — they had a tow out to me in under 45 minutes. Repaired the bumper and trunk lid, and the color match was dead-on. Fair price, no runaround. My new go-to shop."</p>
-        <div class="test-author">
-          <div class="test-avatar">S</div>
-          <div>
-            <div class="test-name">Sofia R.</div>
-            <div class="test-meta">Collision Repair + Tow · Burbank, CA</div>
-          </div>
-        </div>
+        <p class="testimonial-text">"Brought in my BMW M3 after a parking lot scrape. These guys are true professionals — the detail work on the bumper was immaculate. They treated my car like it was their own. Will not go anywhere else."</p>
+        <div class="testimonial-author">David K.</div>
+        <div class="testimonial-location">Glendale, CA</div>
       </div>
 
-      <div class="test-card fade-in">
-        <div class="test-stars">
+      <div class="testimonial-card fade-in">
+        <div class="testimonial-quote-bg">"</div>
+        <div class="testimonial-stars">
           <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         </div>
-        <p class="test-quote">"Had P&R do a full PPF wrap on my new BMW M4. They took their time, no bubbles, clean edges all around. The guys are straightforward — told me exactly what I needed, no upselling. That's rare. Highly recommend."</p>
-        <div class="test-author">
-          <div class="test-avatar">D</div>
-          <div>
-            <div class="test-name">Daniel K.</div>
-            <div class="test-meta">PPF / Clear Bra Install · Pasadena, CA</div>
-          </div>
-        </div>
+        <p class="testimonial-text">"I had a 1967 Mustang that needed extensive restoration work. P&R took on the challenge and delivered beyond expectations. The craftsmanship is stunning. These guys genuinely love what they do."</p>
+        <div class="testimonial-author">James R.</div>
+        <div class="testimonial-location">Glendale, CA</div>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- ===== CONTACT ===== -->
+<!-- ── CONTACT ── -->
 <section id="contact">
   <div class="container">
-    <div class="fade-in" style="margin-bottom: 56px;">
-      <p class="section-label">Get In Touch</p>
-      <h2 class="section-title">Request a Free Estimate</h2>
-      <p class="section-subtitle">Describe your vehicle's damage and we'll get back to you with a quote. No obligation, no pressure.</p>
-    </div>
+    <div class="section-label fade-in">Get In Touch</div>
+    <h2 class="section-title fade-in">Request a Free Estimate</h2>
+    <p class="section-desc fade-in">Stop by, call us, or fill out the form — we'll get back to you within the hour during business hours.</p>
     <div class="contact-grid">
 
-      <!-- Info -->
       <div class="contact-info fade-in">
-        <h3>Contact &amp; Hours</h3>
-
-        <div class="contact-detail">
-          <div class="contact-detail-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
           </div>
-          <div class="contact-detail-text">
-            <p>Address</p>
-            <a href="https://maps.google.com/?q=5320+San+Fernando+Rd+Glendale+CA+91203" target="_blank" rel="noopener">5320 San Fernando Rd<br>Glendale, CA 91203</a>
+          <div class="contact-item-text">
+            P&amp;R Auto Center<br />
+            <strong style="color:#fff">Glendale, CA 91205</strong>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div class="contact-item-text">
+            Phone<br />
+            <a href="tel:8183343014">(818) 334-3014</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div class="contact-item-text">
+            Email<br />
+            <a href="mailto:info@prautocenter.com">info@prautocenter.com</a>
           </div>
         </div>
 
-        <div class="contact-detail">
-          <div class="contact-detail-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.42 2 2 0 0 1 3.58 1.25h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          </div>
-          <div class="contact-detail-text">
-            <p>Phone (24/7 Towing)</p>
-            <a href="tel:+18183343014">(818) 334-3014</a>
-          </div>
-        </div>
-
-        <div class="contact-detail">
-          <div class="contact-detail-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          </div>
-          <div class="contact-detail-text">
-            <p>Email</p>
-            <a href="mailto:service@pandrautocenter.com">service@pandrautocenter.com</a>
-          </div>
-        </div>
-
-        <div class="contact-detail">
-          <div class="contact-detail-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          </div>
-          <div class="contact-detail-text">
-            <p>Instagram</p>
-            <a href="https://instagram.com/pandr_autocenter" target="_blank" rel="noopener">@pandr_autocenter</a>
-          </div>
-        </div>
-
-        <div class="hours-table">
-          <h4>Business Hours</h4>
-          <div class="hours-row">
-            <span class="day">Monday – Friday</span>
-            <span class="time">8:00 AM – 5:00 PM</span>
-          </div>
-          <div class="hours-row">
-            <span class="day">Saturday</span>
-            <span class="time">9:00 AM – 3:00 PM</span>
-          </div>
-          <div class="hours-row closed">
-            <span class="day">Sunday</span>
-            <span class="time">Closed</span>
-          </div>
-          <div class="hours-row" style="border-bottom: none; padding-top: 14px;">
-            <span class="day" style="color: var(--red); font-weight: 600;">Towing:</span>
-            <span class="time" style="color: var(--red);">24 / 7</span>
-          </div>
-        </div>
+        <table class="hours-table">
+          <tr><td>Monday – Friday</td><td>8:00 AM – 5:00 PM</td></tr>
+          <tr><td>Saturday</td><td>9:00 AM – 3:00 PM</td></tr>
+          <tr><td>Sunday</td><td>Closed</td></tr>
+          <tr><td>Towing</td><td>24 / 7</td></tr>
+        </table>
       </div>
 
-      <!-- Form -->
       <div class="contact-form fade-in">
         <h3>Get Your Free Quote</h3>
         <form onsubmit="return false;">
           <div class="form-row">
             <div class="form-group">
-              <label>First Name</label>
-              <input type="text" placeholder="John" />
+              <label>Full Name</label>
+              <input type="text" placeholder="John Smith" />
             </div>
             <div class="form-group">
-              <label>Last Name</label>
-              <input type="text" placeholder="Smith" />
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label>Phone Number</label>
-              <input type="tel" placeholder="(818) 000-0000" />
-            </div>
-            <div class="form-group">
-              <label>Email Address</label>
-              <input type="email" placeholder="john@example.com" />
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label>Vehicle Year</label>
-              <input type="text" placeholder="2021" />
-            </div>
-            <div class="form-group">
-              <label>Make &amp; Model</label>
-              <input type="text" placeholder="Toyota Camry" />
+              <label>Phone</label>
+              <input type="tel" placeholder="(818) 555-0100" />
             </div>
           </div>
           <div class="form-group">
-            <label>Service Needed</label>
-            <select>
-              <option value="">Select a service...</option>
-              <option>Collision Repair</option>
-              <option>Paint &amp; Refinishing</option>
-              <option>Frame &amp; Structural Repair</option>
-              <option>Custom &amp; Restoration</option>
-              <option>Clear Bra / PPF</option>
-              <option>24/7 Towing</option>
-              <option>Other / Not Sure</option>
-            </select>
+            <label>Email</label>
+            <input type="email" placeholder="john@example.com" />
+          </div>
+          <div class="form-group">
+            <label>Vehicle (Year / Make / Model)</label>
+            <input type="text" placeholder="e.g. 2019 Toyota Camry" />
           </div>
           <div class="form-group">
             <label>Describe the Damage</label>
-            <textarea placeholder="Describe what happened and which areas are damaged. The more detail, the better we can estimate your repair..."></textarea>
+            <textarea placeholder="Describe what happened and the areas affected…"></textarea>
           </div>
-          <div class="form-submit">
-            <button type="submit" class="btn btn-primary">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-              Send My Request
-            </button>
-          </div>
+          <button type="submit" class="form-submit">Send My Request →</button>
         </form>
       </div>
 
@@ -1139,96 +1299,76 @@
   </div>
 </section>
 
-<!-- ===== FOOTER ===== -->
+<!-- ── FOOTER ── -->
 <footer>
-  <div class="container">
-    <div class="footer-inner">
-      <div class="footer-logo" style="display:flex;align-items:center;gap:12px">
-        <svg width="40" height="40" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="22" cy="22" r="21" fill="white" stroke="#444" stroke-width="1.5"/>
-          <circle cx="22" cy="22" r="18" fill="none" stroke="#444" stroke-width="1"/>
-          <text x="22" y="20" text-anchor="middle" font-family="Georgia, serif" font-weight="700" font-size="11" fill="#111" letter-spacing="1">P&amp;R</text>
-          <text x="22" y="30" text-anchor="middle" font-family="Georgia, serif" font-weight="400" font-size="5" fill="#333" letter-spacing="2">AUTO CENTER</text>
-        </svg>
-        <div>
-          <div style="font-size:1.1rem;font-weight:900;color:#fff">P&amp;R <span>Auto Center</span></div>
-          <div style="font-size:0.7rem;color:#8899aa;letter-spacing:0.1em;text-transform:uppercase">Glendale, CA</div>
-        </div>
-      </div>
-      <div class="footer-tagline">Glendale's Premier Auto Body &amp; Collision Center</div>
-
-      <div class="footer-links">
-        <a href="#services">Services</a>
-        <a href="#why-us">Why Us</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#contact">Contact</a>
-        <a href="tel:+18183343014">(818) 334-3014</a>
-      </div>
-
-      <a href="https://instagram.com/pandr_autocenter" target="_blank" rel="noopener" class="footer-instagram">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#hero" class="logo" style="margin-bottom:16px; display:inline-flex;">
+        <span class="logo-pr">P&amp;R</span>
+        <div class="logo-divider"></div>
+        <span class="logo-sub">AUTO CENTER</span>
+      </a>
+      <p class="footer-tagline">Glendale's Premier Auto Body &amp; Collision Center. Serving the LA area since 2005.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#services">Our Services</a></li>
+        <li><a href="#specialties">Vehicles We Serve</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact">Free Estimate</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Follow Us</h4>
+      <a href="https://www.instagram.com/pandr_autocenter" target="_blank" rel="noopener" class="social-link">
+        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
         @pandr_autocenter
       </a>
-
-      <div class="footer-sister">
-        Sister company: <a href="https://instagram.com/pandr_autosales" target="_blank" rel="noopener">@pandr_autosales</a>
-      </div>
-
-      <div class="footer-copy">© 2024 P&amp;R Auto Center · 5320 San Fernando Rd, Glendale, CA 91203 · All Rights Reserved</div>
     </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 P&amp;R Auto Center. All rights reserved.</p>
+    <p>Glendale, CA · (818) 334-3014</p>
   </div>
 </footer>
 
-<!-- ===== JS ===== -->
 <script>
   // Hamburger menu
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
   hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
     mobileMenu.classList.toggle('open');
   });
-  // Close on mobile link click
-  document.querySelectorAll('.mobile-link').forEach(link => {
-    link.addEventListener('click', () => mobileMenu.classList.remove('open'));
-  });
-
-  // Smooth scroll for all anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        mobileMenu.classList.remove('open');
-      }
-    });
-  });
+  function closeMobile() {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  }
 
   // Fade-in on scroll
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
+    entries.forEach(entry => {
       if (entry.isIntersecting) {
-        // Stagger siblings
-        const siblings = Array.from(entry.target.parentElement?.querySelectorAll('.fade-in') || []);
-        const idx = siblings.indexOf(entry.target);
-        const delay = idx >= 0 ? Math.min(idx * 80, 400) : 0;
-        setTimeout(() => {
-          entry.target.classList.add('visible');
-        }, delay);
+        entry.target.classList.add('visible');
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.12 });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  document.querySelectorAll('.fade-in').forEach((el, i) => {
+    el.style.transitionDelay = `${(i % 4) * 0.08}s`;
+    observer.observe(el);
+  });
 
-  // Navbar scroll effect
-  const navbar = document.getElementById('navbar');
+  // Nav background on scroll
+  const nav = document.querySelector('nav');
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 20) {
-      navbar.style.background = 'rgba(10, 14, 26, 0.97)';
+    if (window.scrollY > 60) {
+      nav.style.background = 'rgba(4, 8, 15, 0.98)';
     } else {
-      navbar.style.background = 'rgba(10, 14, 26, 0.85)';
+      nav.style.background = 'rgba(4, 8, 15, 0.92)';
     }
   });
 </script>
