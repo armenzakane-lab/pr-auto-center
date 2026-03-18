@@ -111,18 +111,20 @@
     .nav-logo {
       display: flex;
       align-items: center;
-      gap: 10px;
-      font-size: 1.2rem;
+      gap: 12px;
+      font-size: 1.1rem;
       font-weight: 900;
-      letter-spacing: -0.02em;
+      letter-spacing: 0.02em;
       color: var(--white);
+      text-decoration: none;
     }
-    .nav-logo span { color: var(--red); }
+    .nav-logo span { color: #4CAF50; }
     .logo-icon {
-      width: 36px; height: 36px;
-      background: var(--red);
-      border-radius: 6px;
+      width: 40px; height: 40px;
+      background: #4CAF50;
+      border-radius: 8px;
       display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
     }
     .nav-links {
       display: flex;
@@ -556,7 +558,7 @@
       color: var(--white);
       letter-spacing: -0.02em;
     }
-    .footer-logo span { color: var(--red); }
+    .footer-logo span { color: #4CAF50; }
     .footer-tagline { font-size: 0.88rem; color: var(--gray); }
     .footer-links {
       display: flex;
@@ -619,7 +621,10 @@
             <circle cx="16.5" cy="14.5" r="1.5"/>
           </svg>
         </div>
-        P&amp;<span>R</span> Auto Center
+        <div style="display:flex;flex-direction:column;line-height:1.1">
+          <div style="font-size:1rem;font-weight:900;letter-spacing:0.05em">P&amp;<span style="color:#4CAF50">R</span></div>
+          <div style="font-size:0.6rem;font-weight:600;letter-spacing:0.15em;color:#8899aa;text-transform:uppercase">Auto Center</div>
+        </div>
       </a>
 
       <!-- Nav Links -->
