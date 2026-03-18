@@ -72,25 +72,20 @@
     }
     .logo-pr {
       color: #fff;
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       font-weight: 900;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.04em;
       font-family: var(--font);
-    }
-    .logo-divider {
-      width: 1px;
-      height: 24px;
-      background: var(--red);
-      margin: 0 12px;
-      flex-shrink: 0;
+      display: block;
     }
     .logo-sub {
-      color: #888;
-      font-size: 0.55rem;
+      color: var(--red);
+      font-size: 0.5rem;
       font-weight: 700;
-      letter-spacing: 0.25em;
+      letter-spacing: 0.3em;
       text-transform: uppercase;
-      line-height: 1.2;
+      display: block;
+      margin-top: 2px;
     }
 
     .nav-links {
@@ -889,9 +884,10 @@
 <!-- ── NAV ── -->
 <nav>
   <a href="#hero" class="logo">
-    <span class="logo-pr">P&amp;R</span>
-    <div class="logo-divider"></div>
-    <span class="logo-sub">AUTO CENTER</span>
+    <div style="display:flex;flex-direction:column;line-height:1">
+      <span class="logo-pr">P&amp;R</span>
+      <span class="logo-sub">AUTO CENTER</span>
+    </div>
   </a>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
@@ -1303,10 +1299,11 @@
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <a href="#hero" class="logo" style="margin-bottom:16px; display:inline-flex;">
-        <span class="logo-pr">P&amp;R</span>
-        <div class="logo-divider"></div>
-        <span class="logo-sub">AUTO CENTER</span>
+      <a href="#hero" class="logo" style="margin-bottom:16px;display:inline-flex;">
+        <div style="display:flex;flex-direction:column;line-height:1">
+          <span class="logo-pr">P&amp;R</span>
+          <span class="logo-sub">AUTO CENTER</span>
+        </div>
       </a>
       <p class="footer-tagline">Glendale's Premier Auto Body &amp; Collision Center. Serving the LA area since 2005.</p>
     </div>
